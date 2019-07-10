@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { BreadcrumbComponent } from './breadcrumb.component';
 import { BreadcrumbService } from './breadcrumb.service';
+import { RouterModule } from '@angular/router';
 
 export * from './breadcrumb.component';
 export * from './breadcrumb.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
   declarations: [
     BreadcrumbComponent

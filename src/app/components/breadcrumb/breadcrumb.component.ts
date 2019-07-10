@@ -11,8 +11,8 @@ import {BreadcrumbService} from './breadcrumb.service';
     template: `
         <ul [class.breadcrumb]="useBootstrap">
             <li *ngFor="let url of _urls; let last = last" [ngClass]="{'breadcrumb-item': useBootstrap, 'active': last}"> <!-- disable link of last item -->
-                <a role="button" *ngIf="!last && url == prefix" (click)="navigateTo('/')">{{url}}</a>
-                <a role="button" *ngIf="!last && url != prefix" (click)="navigateTo(url)">{{friendlyName(url)}}</a>
+                <a role="button" *ngIf="!last && url == prefix" [routerLink]="[url]" (click)="navigateTo('/')">{{url}}</a>
+                <a role="button" *ngIf="!last && url != prefix" [routerLink]="[url]" (click)="navigateTo(url)">{{friendlyName(url)}}</a>
                 <span *ngIf="last">{{friendlyName(url)}}</span>
                 <span *ngIf="last && url == prefix">{{friendlyName('/')}}</span>
             </li>
